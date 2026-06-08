@@ -1,30 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Animated website</title>
+		 
+<style>
+   body  {
+	   margin: 0;
+	   font-family: Arial;
+	   background: linear-gradient(135deg, #0f172a, #1e3a8a);
+	   color: white;
+	   text-align: center;
 
-button {
-    margin- top: 20px;
-    padding:10px 20px;
-    font-size: 16px
-    border:none;
-    background-colour: #38bdf8;
-    color : black;
-    border-radius: 8px;
-    cursor: pointer;
- }
+	   display:flex;
+	   flex-direction:column;
+	   height: 100vh;
 
- button:hover {
-     background-color: #0ea5e9;
+	    animation: fadeIn 1.5s ease-in;
+   }
+    
+   h1 {
+      font-size: 50px;
+      animation:slidedown 1s ease-out;
+   }
 
-  
+   p{ 
+	   font-size:20px;
+	   color: #cbd5e1;
+	   animation: fadeIn 2s ease-in;
+   }
+   button{
+	   margin-top: 20px;
+	   padding:12px 25px;
+	   font-size:16px;
+	   border: none;
+	   border-radius:10px;
+	   background:#38bdf8;
+	   color: black;
+	   cursor:pointer;
+
+	   transition: all 0.3s ease;
+   }
+     button:hover {
+	     transform:scale(1.1);
+	     background:#0ea5e9;
      }
-   </style>
- <head>
+       button:active {
+	       transform:scale(0.95);
+       } 
 
-<body>;
+       /*ANIMATIONS */
+       @keyframes fadeIn {
+	       from {opacity:0; }
+	       to { opacity: 1; }
+       }
 
-     <h1>Hello,I'am learning web Dev</h1>
-    <p>This is my first styled website</p> 
-       
-<button onclick="alert(you clicked the button!')">
-       Click Me
-</button>
-</body>
+        @keyframes slidedown {
+		from { transform: translateY(-50px); opacity: 0; }
+		to { transform: translatyeY(0); opacity: 1; }
+	}
+</style>
+	</head>
+	<body>
+		<h1>Hello, I am Bishal </h1>
+		<p>This is my animated website </p>
+		 
+		<button on click="changetext()">
+			Click Me
+		</button> 
+
+		<script>
+			function cnangeText() {
+				document.querySelector("h1").innertext = "you clicled the button";
+			}
+		</script>
+	</body>
 </html>
